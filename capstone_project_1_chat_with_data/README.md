@@ -1,3 +1,14 @@
+---
+title: Steam LLM Assistant
+emoji: 💬
+colorFrom: indigo
+colorTo: blue
+sdk: docker
+pinned: false
+license: mit
+app_port: 7860
+---
+
 # Steam LLM Assistant
 
 A Streamlit web application that lets you explore a Steam games database and interact with an OpenAI-powered agent. The agent can query the local SQLite database, provide insights, and even create GitHub issues on your behalf.
@@ -7,7 +18,7 @@ A Streamlit web application that lets you explore a Steam games database and int
 - Access to a curated Steam dataset stored in `steam.sqlite`.
 - Function calling for database queries and genre statistics.
 - GitHub issue creation via `create_github_issue`, using credentials from environment variables.
-- Sidebar with a live log of agent actions for easier debugging.
+- Sidebar with a live log of agent actions and database summary.
 
 ## Project Structure
 - `streamlit_app.py` — Streamlit entry point with chat UI and logging sidebar.
@@ -43,34 +54,15 @@ A Streamlit web application that lets you explore a Steam games database and int
    GITHUB_API_URL=https://api.github.com  # optional override
    ```
 
-## Running Locally
+## Usage
 ```bash
 streamlit run streamlit_app.py
+
+also you can use demo on HuggingFace Spaces: https://huggingface.co/spaces/SherAlex/capstone_project_1_chat_with_data
 ```
-
-The application starts in your default browser. Use the chat box to ask about Steam games or request creation of GitHub issues. Logs appear in the sidebar for transparency.
-
-## Deploying to Hugging Face Spaces
-1. Create a new Space and select the **Streamlit** template.
-2. Push the project files (including `steam.sqlite`) to the Space repository.
-3. Add secrets under *Settings → Secrets*:
-   - `OPENAI_API_KEY`
-   - `GITHUB_TOKEN`
-   - `GITHUB_REPO`
-   - Any additional variables you need (`STEAM_DB_PATH`, `GITHUB_API_URL`).
-4. Hugging Face will install dependencies and launch the app automatically.
 
 ## Screenshots
 Add usage examples here:
-```
-![Chat view](path/to/screenshot1.png)
-![Issue creation](path/to/screenshot2.png)
-```
 
-## Troubleshooting
-- **Missing tokens or database**: The app will display errors if required environment variables or the SQLite file are absent.
-- **GitHub 403/404 errors**: Ensure `GITHUB_REPO` is correct and the token has `repo` (or `Issues: Read and write` for fine-grained tokens) permissions.
-
-## License
-Specify your preferred license here (MIT, Apache, proprietary, etc.).
-
+![Chat view](./GameExample.png)
+![Issue creation](./TaskCreationDemo.png)
