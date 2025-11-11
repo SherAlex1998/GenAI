@@ -1,2 +1,2 @@
 # GenAI
-Capstone project for GenAI course
+Capstone projects for GenAI course
