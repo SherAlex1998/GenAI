@@ -62,7 +62,7 @@ also you can use demo on HuggingFace Spaces: https://huggingface.co/spaces/SherA
 ```
 
 ## Screenshots
-Add usage examples here:
 
 ![Chat view](./GameExample.png)
 ![Issue creation](./TaskCreationDemo.png)
+
