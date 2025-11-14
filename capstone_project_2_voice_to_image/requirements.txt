@@ -1,0 +1,7 @@
+streamlit>=1.39.0
+vosk>=0.3.45
+audio-recorder-streamlit>=0.0.8
+soundfile>=0.12.1
+python-dotenv>=1.0.1
+openai>=1.50.2
+
